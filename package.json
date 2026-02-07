@@ -1,0 +1,27 @@
+{
+  "name": "intro-to-backend",
+  "version": "1.0.0",
+  "description": "a tutorial for intro t backend",
+  "main": "backend/src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon backend/src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NishkarshModi/backend-node.git"
+  },
+  "author": "Nishkarsh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NishkarshModi/backend-node/issues"
+  },
+  "homepage": "https://github.com/NishkarshModi/backend-node#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mongoose": "^9.1.1",
+    "nodemon": "^3.1.11"
+  }
+}
