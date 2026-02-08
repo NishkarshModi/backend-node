@@ -1,5 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 import bcrypt from "bcrypt";
+
 const userSchema = new Schema(
   {
     username: {
@@ -11,12 +12,14 @@ const userSchema = new Schema(
       minLength: 1,
       maxLength: 30,
     },
+
     password: {
       type: String,
       required: true,
       minLength: 6,
       maxLength: 50,
     },
+
     email: {
       type: String,
       required: true,
@@ -25,15 +28,17 @@ const userSchema = new Schema(
       trim: true,
     },
   },
+
   {
     timestamps: true,
   },
 );
 
-// before saving any password we need to hash
+// before saving any password we need to hash it
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next();
   this.password = await bcrypt.hash(this.password, 10);
+
   next();
 });
 
